@@ -3,7 +3,8 @@
 $validation = [];
 function validate($data){
     global $validation;
-    if(empty($_POST['username']) || !preg_match('/A-Z/', $_POST['username'])){
+    if(empty($_POST['username']) || !preg_match('/^[A-Z][a-z\d_]{2,20}$/', $_POST['username'])){
+
         $validation[] = "Vardas turi buti is didziosios";
     }
 }
